@@ -80,7 +80,9 @@
 ?>
 <?php wp_footer(); ?>
 <!--个人特效-->
-<?php require('/home/gyc/docker/wordpress/app/wp-content/themes/argon-theme/specialEffects/common.php);?>
+<?php require('/home/gyc/docker/wordpress/app/wp-content/themes/argon-theme/specialEffects/common.php'); ?>
 </body>
+
+<?php echo get_option('argon_custom_html_foot'); ?>
 
 </html>
