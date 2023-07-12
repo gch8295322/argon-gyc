@@ -25,7 +25,7 @@
             // $.getScript("https://bensz.onmicrosoft.cn/bloghelper/js/xiaxue.js");
  
             // 樱花
-            // $.getScript("https://bensz.onmicrosoft.cn/bloghelper/js/yinghua.js");
+            $.getScript("https://bensz.onmicrosoft.cn/bloghelper/js/yinghua.js");
  
             // 小烟花特效
             // $.getScript("https://bensz.onmicrosoft.cn/bloghelper/js/mouse-click.js");
