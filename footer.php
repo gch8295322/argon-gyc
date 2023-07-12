@@ -4,7 +4,7 @@
 						?>
 						<div>Theme <a href="https://github.com/solstice23/argon-theme" target="_blank"><strong>Argon</strong></a><?php if (get_option('argon_hide_footer_author') != 'true') {echo " By solstice23"; }?></div>
 						<!--计时-->
-						<?php require('/home/gyc/docker/wordpress/app/wp-content/themes/argon-theme/specialEffects/timeRAM.php');?>
+						<?php require('./specialEffects/timeRAM.php'); ?>
 					</footer>
 				</main>
 			</div>
@@ -80,7 +80,7 @@
 ?>
 <?php wp_footer(); ?>
 <!--个人特效-->
-<?php require('/home/gyc/docker/wordpress/app/wp-content/themes/argon-theme/specialEffects/common.php'); ?>
+<?php require('./specialEffects/common.php'); ?>
 </body>
 
 <?php echo get_option('argon_custom_html_foot'); ?>
