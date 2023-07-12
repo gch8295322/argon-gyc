@@ -81,6 +81,45 @@
 <?php wp_footer(); ?>
 <!--个人特效-->
 <?php require(__DIR__ . '/specialEffects/common.php'); ?>
+
+<!--看板娘-->
+<script src="https://blog.gyc0219.com/wp-content/uploads/live2dyy/autoload.js"></script>
+<!--音乐播放器-->
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://fastly.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+<meting-js id="773598114" server="netease" type="playlist" theme="#339981" fixed="true" preload="auto" autoplay="false" loop="all" order="random" volume="0.3"></meting-js>
+<!--歌词相关-->
+<script>
+function removelrc(){
+    $(".aplayer.aplayer-fixed .aplayer-body").addClass("my-hide");
+    //document.querySelector('meting-js').aplayer.lrc.hide();
+    $(".aplayer.aplayer-fixed .aplayer-icon-lrc").addClass("aplayer-icon-lrc-inactivity");
+    $(".aplayer.aplayer-fixed .aplayer-lrc").addClass("aplayer-lrc-hide");
+    document.querySelector('meting-js').aplayer.on('play', function () {
+            document.querySelector('meting-js').aplayer.lrc.show();
+            $(".aplayer.aplayer-fixed .aplayer-icon-lrc").removeClass("aplayer-icon-lrc-inactivity");
+    });
+    document.querySelector('meting-js').aplayer.on('pause', function () {
+            document.querySelector('meting-js').aplayer.lrc.hide();
+            $(".aplayer.aplayer-fixed .aplayer-icon-lrc").addClass("aplayer-icon-lrc-inactivity");
+    });
+}
+document.querySelector('meting-js').addEventListener("DOMNodeInserted",removelrc);
+setTimeout(function() {
+    document.querySelector('meting-js').removeEventListener("DOMNodeInserted",removelrc);
+    //移除左侧栏切换时的监听事件防止页面刷新
+    if($("#leftbar_tab_catalog_btn").length > 0){
+        var el = document.getElementById('leftbar_tab_catalog_btn'),elClone = el.cloneNode(true);
+        el.parentNode.replaceChild(elClone, el);
+    }
+    var el = document.getElementById('leftbar_tab_overview_btn'),elClone = el.cloneNode(true);
+    el.parentNode.replaceChild(elClone, el);
+    var el = document.getElementById('leftbar_tab_tools_btn'),elClone = el.cloneNode(true);
+    el.parentNode.replaceChild(elClone, el);
+}, 5000);
+</script>
+
 </body>
 
 <?php echo get_option('argon_custom_html_foot'); ?>
