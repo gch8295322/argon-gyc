@@ -9,7 +9,7 @@ date.setUTCHours(0, 0, 0, 0);
 return date;
 }
 function momxc() {
-var birthDay =NewDate("2022-04-10");
+var birthDay =NewDate("2023-07-10");
 var today=new Date();
 var timeold=today.getTime()-birthDay.getTime();
 var sectimeold=timeold/1000
